@@ -3,7 +3,7 @@ var app = express();
 
 app.get('/', function (req, res) {
    console.log(req.query.value)
-   res.status(200).json({value: Number(req.query.value)/2});
+   res.status(200).json({value: Number(req.query.value)});
 })
 
 var server = app.listen(3333, function () {
