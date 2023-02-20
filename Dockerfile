@@ -6,4 +6,4 @@ RUN npm install
 COPY . .
 WORKDIR /nodejs-echo-server
 
-CMD [ "./ server.js" ]
+CMD [ "./server.js" ]
