@@ -1,9 +1,17 @@
 var express = require('express');
 var app = express();
+const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
 
-app.get('/', function (req, res) {
-   console.log(req.query.value)
-   res.status(200).json({value: Number(req.query.value)});
+app.post('/', function (req, res) {
+   console.log(req.body)
+   console.log(req.body.value)
+   res.status(200).json({value: Number(req.body.value)});
 })
 
 var server = app.listen(3333, function () {
